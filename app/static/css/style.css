@@ -1,0 +1,18 @@
+body {
+    display: grid;
+    grid: [stack] 1fr / -webkit-min-content [stack] 1fr;
+    grid: [stack] 1fr / min-content [stack] 1fr;
+    }
+
+    @media (max-width: 540px) {
+        body > aside,
+        body > main {
+            grid-area: stack;
+        }
+    }
+    #sidenav-open {
+        --easeOutExpo: cubic-bezier(0.16, 1, 0.3, 1);
+        --duration: .6s;
+        display: grid;
+        grid-template-columns: [nav] 2fr [escape] 1fr;
+    }

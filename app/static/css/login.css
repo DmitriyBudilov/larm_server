@@ -1,0 +1,142 @@
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 370px;
+    height: 600px;
+    background: rgba(250, 250, 250, .9);;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgb(0 0 0 / 40%);
+    -moz-box-shadow: 0 10px 15px 0 rgba(0,0,0,.4);
+    -webkit-box-shadow: 0 10px 15px 0 rgb(0 0 0 / 40%);
+    -o-box-shadow: 0 10px 15px 0 rgba(0,0,0,.4);
+    -ms-box-shadow: 0 10px 15px 0 rgba(0,0,0,.4)
+}
+
+.container h1 {
+    text-align: center;
+    padding: 40px 0 0 0;
+    color: rgb(49, 49, 49);
+    /* border-bottom: 1px solid silver; */
+}
+
+.container .logo {
+    position: relative;
+    margin-top: 15px;
+    top: 0%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%);
+}
+
+.container form {
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.alert {
+    color: red;
+}
+
+form .txt_field{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.txt_field input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.txt_field label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: all .4s;
+    transition-property: all;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
+.txt_field span::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #2981b9;
+    transition: all .4s;
+    transition-property: all;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label {
+    top: -5px;
+    color: #2981b9;
+}
+
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before {
+    width: 100%;
+}
+
+.remember {
+    text-align: center;
+    margin: -5px 0 20px 5px;
+    cursor: pointer;
+}
+
+.remember label {
+    color: #666666;
+}
+
+input[type="submit"] {
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background: #2981b9;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+}
+
+input[type="submit"]:hover {
+    border-color: #2981b9;
+    transition: .5s;
+}
+
+.signup_link {
+    margin: 30px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #666666;
+}
+
+.signup_link a {
+    color: #2691d9;
+    text-decoration: none;
+}
+
+.signup_link a:hover {
+    text-decoration: underline;
+}

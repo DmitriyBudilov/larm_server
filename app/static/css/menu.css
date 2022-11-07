@@ -1,0 +1,38 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+nav .main-menu {
+    transition: all 0.5s ease;
+}
+
+nav.main-menu ul li a {
+    display: block;
+    padding: 10px 16px;
+    /* border-top: 1px solid #39556c; */
+    color: rgb(223, 223, 223);
+    font-size: 16px;
+    position: relative;
+    /* text-align: right; */
+}
+
+nav.main-menu ul li a .icon {
+    color: #dee4ec;
+    width: 30px;
+    display: inline-block;
+    padding-right: 10px;
+}
+
+nav.main-menu .head-menu {
+    display: block;
+    padding: 10px 16px;
+    color: #dee4ec;
+    border-bottom: 1px solid white;
+    position: relative;
+}
+
+/* nav.main-menu hr {
+    margin-right: 15px;
+    height: 1px;
+    border: 1px solid #dee4ec;
+} */
+

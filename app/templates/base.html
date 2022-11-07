@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block styles %}
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css') }}">
+    {% endblock %}
+    {% if title %}
+            <title>{{ title }}</title>
+    {% else %}
+            <title>LARM</title>
+    {% endif %}
+</head>
+<body>
+    <div class="container main">
+        <header class="">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='png/logo.png') }}" alt="">
+                <div class="title">
+                    <h1>LARM</h1>
+                    <span>Laboratory of Acustic and Radom Monitoring</span>
+                </div>
+            </div>
+            {% block header %}
+            {% endblock %}
+            {% if current_user.is_anonimus %}    
+                <li><a href="{{ url_for('login') }}"><span class="icon"><i class="fas fa-sign-out-alt"></i></span><span>Login</span></a></li>
+            {% else %}
+                <li><a href="{{ url_for('logout') }}"><span class="icon"><i class="fas fa-sign-out-alt"></i></span><span>Logout</span></a></li>
+            {% endif %}
+            
+        </header>
+        <aside class="">
+            {% include "menu.html" %}
+        </aside>
+        <main class="item">
+            {% block content %}
+            {% endblock %}
+        </main>
+        <div class="logs item">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul>
+                        {% for message in messages %}
+                                <li>{{ message|e }}</li>
+                        {% endfor %}
+                        
+                    </ul>
+                {% endif %}
+            {% endwith %}
+            {% block logs %}
+            {% endblock %}
+        </div>
+        <footer class="item">
+            {% block footer %}
+            {% endblock %}
+        </footer>
+    </div>
+</body>
+</html>

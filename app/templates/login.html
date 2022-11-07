@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        
+        <div class="container">
+            <h1>Welcome to <br> LARM station</h1>
+            <img class="logo" src="{{ url_for('static', filename='png/logo.png') }}" alt="">
+            
+            <form class="login" action="" method="post">
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul>
+                        {% for message in messages %}
+                                <li>{{ message|e }}</li>
+                        {% endfor %}
+                        
+                    </ul>
+                {% endif %}
+                {% endwith %}
+                {{ form.hidden_tag() }}
+                <div class="txt_field">
+                    {{ form.email }}
+                    <span></span>
+                    {{ form.email.label }}
+                </div>
+                <div class="txt_field">
+                    {{ form.password }}
+                    <span></span>
+                    {{ form.password.label }}
+                </div>
+                <div class="remember">{{ form.remember_me() }} {{ form.remember_me.label }}</div>
+                {{ form.submit }}
+                <div class="signup_link">
+                    Not a member? <a href="#">Sign Up</a>
+                </div>
+            </form>
+            <div class="social-login"></div>
+        </div>
+    </main>
+    <footer>
+    </footer>
+</body>
+</html>
