@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>Edit profile {{ user.username.title() }} {{ user.surname.title() }}</h3>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }}:
+            {{ form.username(size=32).title() }}
+            {% for error in form.username.errors %}
+                    <span style="color: red;">{{ error|e }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.surname.label }}:
+            {{ form.surname(size=32).title() }}
+            {% for error in form.surname.errors %}
+                    <span style="color: red;">{{ error|e }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.email.label }}:
+            {{ form.email(size=32) }}
+            {% for error in form.email.errors %}
+                    <span style="color: red;">{{ error|e }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.birthday.label }}:
+            {{ form.birthday(size=32) }}
+            {% for error in form.birthday.errors %}
+                    <span style="color: red;">{{ error|e }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.old_password.label }}:
+            {{ form.old_password(size=32) }}
+            {% for error in form.old_password.errors %}
+                    <span style="color: red;">{{ error|e }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }}:
+            {{ form.password(size=32) }}
+            {% for error in form.password.errors %}
+                    <span style="color: red;">{{ error|e }}</span>
+            {% endfor %}
+        </p>
+            {{ form.submit() }}
+            
+    </form>
+{% endblock %}

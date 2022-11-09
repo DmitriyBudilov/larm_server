@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "app_db",
+            "database": "${workspaceFolder:larm_server}/app.db"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}

@@ -3,12 +3,13 @@
 
 nav .main-menu {
     transition: all 0.5s ease;
+    background: linear-gradient(120deg, #2980b9, #8e44ad);
 }
 
 nav.main-menu ul li a {
     display: block;
     padding: 10px 16px;
-    /* border-top: 1px solid #39556c; */
+    border-bottom: 1px solid #39556c;
     color: rgb(223, 223, 223);
     font-size: 16px;
     position: relative;
@@ -29,10 +30,4 @@ nav.main-menu .head-menu {
     border-bottom: 1px solid white;
     position: relative;
 }
-
-/* nav.main-menu hr {
-    margin-right: 15px;
-    height: 1px;
-    border: 1px solid #dee4ec;
-} */
 
